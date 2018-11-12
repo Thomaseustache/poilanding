@@ -7,7 +7,9 @@ $(function() {
 	$('.trigger-menu').click(function(){
 		$('.trigger-menu').toggleClass('open');
 		$('.nav').toggleClass('open');
-	})
+	});
+
+	contentNav();
 
 });
 
@@ -18,4 +20,26 @@ function headerScroll(){
 	}else{
 		$('header').removeClass('scrolled');
 	}
+}
+
+
+function contentNav(){
+	contents = $('.section4 .content-items .content');
+	navItems = $('.section4 .nav-items li');
+
+	contents.hide();
+	contents.first().show().addClass('active');
+	navItems.first().addClass('active');
+
+	navItems.click(function(){
+		ind = $(this).index();
+
+		contents.hide().removeClass('active');
+		contents.eq(ind).show().addClass('active');
+		navItems.removeClass('active');
+		navItems.eq(ind).addClass('active');
+
+		return false;
+	});
+
 }
