@@ -11,6 +11,15 @@ $(function() {
 
 	contentNav();
 
+	$('header .nav a').click(function(){
+		hash = $(this).attr('href');
+		console.log(hash);
+		if( $(hash).length ){
+			$('html,body').stop().animate({scrollTop:$(hash).offset().top}, 500);
+			return false;
+		}
+	});
+
 });
 
 function headerScroll(){
