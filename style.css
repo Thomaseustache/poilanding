@@ -998,6 +998,7 @@ header.scrolled ul li a.btn{
 .section10 .partners img {
 	display: inline-block;
 	margin: 0 20px;
+	max-width: 100%;
 }
 
 /* section11 */
@@ -1412,7 +1413,6 @@ footer .bottom-footer .content .social li a.linkedin i{
     	column-gap: inherit;
     	display: block;
 	    justify-content: inherit;
-	    margin-bottom: 20px;
 	}
 	.section6 .flex-blocs .bloc{
 		width: 100%;
@@ -1482,6 +1482,16 @@ footer .bottom-footer .content .social li a.linkedin i{
 	.section10 .partners {
 		display: block;
 	}
+	.section10 .partners img{
+		margin: 20px 0;
+	}
+	.section11 .news-list article{
+		width: 100%;
+		margin-bottom: 0;
+	}
+	.section11 .news-list article+article{
+		margin-top: 20px;
+	}
 	footer .wrapper{
 		padding: 0;
 	}
@@ -1491,7 +1501,7 @@ footer .bottom-footer .content .social li a.linkedin i{
 	}
 
 	footer .top-footer {
-	background: #fff;
+		background: #fff;
 	}
 	footer .bottom-footer .content{
 		float: none;
