@@ -78,13 +78,17 @@ section {
 section h1{
 	font-size: 3.6em;
 	margin-bottom: 40px;
-	background: -webkit-linear-gradient(45deg, #6962ff 10%, #98dadb 65%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     font-weight: 100;
     line-height: 1.4;
     letter-spacing: -4px;
     text-align: center;
+}
+section h1 span{
+	display: inline-block;
+	background: -webkit-linear-gradient(45deg, #6e71fb 10%, #8ce7d6 65%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+        padding: 0 10px;
 }
 section h1 b{
 	font-weight: 500;
@@ -377,7 +381,6 @@ header.scrolled ul li a.btn{
 }
 
 .section4 .content .logo{
-	height: 60px;
 	width: auto;
 	margin-bottom: 20px;
 	opacity: 0;
@@ -386,7 +389,9 @@ header.scrolled ul li a.btn{
 	transition-delay: 0s;
 }
 .section4 .content .logo img{
-	height: 100%;
+	width: 140px;
+	height: 100px;
+	object-fit: contain;
 	display: inline-block;
 }
 .section4 .content .text h2{
@@ -616,7 +621,90 @@ header.scrolled ul li a.btn{
 	background: #6762fd;
 	color: #fff;
 }
+/* Modal */
+.overlay-modal{
+	background: #6762fd;
+	opacity: .7;
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.modal{
+	position: absolute;
+	z-index: 105;
+	top: 0;
+	width: 75%;
+	margin:auto;
+	left: 50%;
+	transform: translate(-50%, 25vh);
+	background: #fff;
+	border-radius: 25px;
+	display: none;
+}
+.modal .head{
+	padding: 40px;
+	position: relative;
+	text-align: center;
+	border-bottom: 1px #eaeaea solid;
+}
+.modal .head .close{
+	position: absolute;
+	right: 30px;
+	color: #a6a6a6;
+	top: 50%;
+	font-size: 1.6em;
+	padding: 10px;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+.modal .head h2{
+	font-size: 1.4em;
+	font-weight: 400;
+	margin-bottom: 0;
+	letter-spacing: -1px;
+	line-height: 0.8;
+    color: #000;
+    display: inline-block;
+}
+.modal .head h2 b{
+	font-weight: 500;
+	font-size: 2.6em;
+	letter-spacing: -3px;
+	padding: 0 10px;
+	display: block;
+	background: -webkit-linear-gradient(45deg, #6e71fb 10%, #8ce7d6 65%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
+.modal .content{
+	padding: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.modal .content .col{
+	width: 40%;
+}
+.modal .content .col h3{
+	margin-bottom: 10px;
+}
+.modal .content .col h3 span{
+	font-size: 1.4em;
+	font-weight: 400;
+	padding: 5px 20px;
+}
+.modal .content .col p{
+	margin-bottom: 40px;
+	font-size: 1.4em;
+	font-weight: 300;
+}
+.modal .content .col p b{
+	font-weight: 500;
+}
 /* section7 */
 .section7 h1{
 	letter-spacing: -2px;
@@ -638,7 +726,7 @@ header.scrolled ul li a.btn{
 }
 .section7 .content{
 	background: #685fff;
-	padding: 50px 0 100px;
+	padding: 80px 0 140px;
 	text-align: center;
 	color: #fff;
 }
@@ -666,7 +754,7 @@ header.scrolled ul li a.btn{
 /* Section8 */
 .section8 {
 	background: #fff;
-	padding-top: 140px;
+	padding: 140px 0 80px ;
 }
 .section8 h1{
 	font-size: 3.6em;
@@ -719,6 +807,10 @@ header.scrolled ul li a.btn{
 	opacity: 1;
 	width: auto;
 }
+.section8 .chronology .line p a{
+	color: #748af3;
+	text-decoration:none;
+}
 .section8 .chronology .line p.p-right,
 .section8 .chronology .line p.p-left{
 	opacity: .9;
@@ -766,6 +858,12 @@ header.scrolled ul li a.btn{
     justify-content: space-between;
     align-items: center;
     max-width: 450px;
+}
+
+.section8 .chronology .line .cel a{
+	color: #fff;
+	text-decoration: underline;
+    margin: 0 5px;
 }
 .section8 .chronology .line .cel.cel-blue1{
 	background: #75a0f3;
@@ -846,8 +944,8 @@ header.scrolled ul li a.btn{
 .section9 .team-member {
 	text-align: center;
 	display: inline-block;
-	width: auto;
-	margin: 40px;
+	width: 33%;
+	margin: 20px 0;
 }
 .section9 .team-member .visuel{
 	border-radius: 100%;
@@ -868,25 +966,25 @@ header.scrolled ul li a.btn{
 }
 .section9 .team-member p{
 	font-weight: 300;
-	margin-bottom: 10px;
 }
 .section9 .team-member .linkedin{
 	display: inline-block;
 	background: url(img/linkedinlogo.png) no-repeat;
 	background-size: cover;
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	opacity: .3;
-	margin-top: 20px;
+	margin-top: 10px;
 }
-.section9 .team-member .btn{
+.section9 .team-member .purple{
 	font-weight: 500;
 	font-size: 1em;
+	color: #748af3;
 	letter-spacing: 0;
 }
 /* section10 */
 .section10 {
-	background: #fff;
+	background: #fcfcfc;
 	padding: 50px 0;
 }
 .section10 .partners {
@@ -902,6 +1000,10 @@ header.scrolled ul li a.btn{
 /* section11 */
 .section11{
 	background: #fff;
+	padding-top: 50px;
+}
+.section11 h1{
+	margin-bottom: 60px;
 }
 .section11 .news-list{
 	/*column-count: 3;
@@ -931,6 +1033,7 @@ header.scrolled ul li a.btn{
 }
 .section11 .news-list article p{
 	margin-bottom: 40px;
+	display: none;
 }
 
 
@@ -961,7 +1064,8 @@ header.scrolled ul li a.btn{
 	text-align: center;
 	display: inline-block;
 	width: auto;
-	margin: 40px;
+	width: 24%;
+	margin-bottom: 40px;
 }
 .section12 .team-member .visuel{
 	border-radius: 100%;
@@ -1029,10 +1133,11 @@ footer .top-footer .content h1{
 }
 footer .top-footer .content p{
 	font-weight: 200;
+	font-size: 1.4em;
 }
 
 footer form{
-	margin-top: 60px;
+	margin-top: 30px;
 }
 footer form h2{
 	font-size: 2.8em;
@@ -1077,7 +1182,7 @@ footer form input[type=submit]{
 
 footer .bottom-footer .content{
 	float: right;
-	padding: 100px 0 0 150px;
+	padding: 120px 0 0 150px;
 }
 footer .bottom-footer .content h1{
 	color: #fff;
@@ -1093,7 +1198,8 @@ footer .bottom-footer .content h1 b{
 }
 footer .bottom-footer .content p{
 	color: #fff;
-	opacity: .8;
+	font-weight: 200;
+	font-size: 1.4em;
 	margin-bottom: 20px;
 }
 footer .bottom-footer .content .social{
@@ -1305,12 +1411,25 @@ footer .bottom-footer .content .social li a.linkedin i{
 	}
 	.section6 .flex-blocs .bloc{
 		width: 100%;
+		margin-bottom: 40px;
 	}
 	.section6 form .form-input,
 	.section6 form input[type=email] {
 		display: block;
 		width: 100%;
 		margin-bottom: 20px;
+	}
+	.modal {
+		width: 100%;
+		transform: none;
+		left: 0
+	}
+	.modal .content {
+		display: block;
+		padding: 20px;
+	}
+	.modal .content .col {
+		width: 100%;
 	}
 
 
