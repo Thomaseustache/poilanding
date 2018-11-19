@@ -548,6 +548,9 @@ header.scrolled ul li a.btn{
 .section6 .flex-blocs .bloc .visuel{
 	margin-bottom: 70px;
 }
+.section6 .flex-blocs .bloc .visuel img{
+	max-width: 100%;
+}
 .section6 .flex-blocs .bloc a{
 	font-size: 2.4em;
 	display: inline-block;
