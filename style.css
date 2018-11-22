@@ -21,7 +21,7 @@ GENERAL
   background: #6d6dfc; /* Old browsers */
 }
 body{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 100%;
 	font-weight:400; 
 	background: #6d6dfc; /* Old browsers */
@@ -643,11 +643,24 @@ header.scrolled ul li a.btn{
 	top: 0;
 	width: 75%;
 	margin:auto;
-	left: 50%;
-	transform: translate(-50%, 25vh);
+	transform: translate(0%, 15vh);
 	background: #fff;
+	opacity: 0;
 	border-radius: 25px;
-	display: none;
+	transition:transform .4s ease-out;
+}
+#modal-actors{
+	left: 0;
+	transform: translate(-100%, 15vh);
+}
+#modal-tools{
+	right: 0;
+	transform: translate(100%, 15vh);
+}
+#modal-actors.open,
+#modal-tools.open{
+	opacity: 1;
+	transform: translate(0%, 15vh);
 }
 .modal .head{
 	padding: 40px;
@@ -1068,6 +1081,7 @@ header.scrolled ul li a.btn{
 .section12 .team-member {
 	text-align: center;
 	display: inline-block;
+	vertical-align: top;
 	width: auto;
 	width: 24%;
 	margin-bottom: 40px;

@@ -28,11 +28,11 @@ $(function() {
 		oTop = $(document).scrollTop();
 		$(modalId).css({'top': oTop});
 		$('.overlay-modal').show();
-		$(modalId).fadeIn(300);
+		$(modalId).show().addClass('open');
 		return false;
 	});
 	$('.modal .close, .overlay-modal').click(function(){
-		$('.modal').fadeOut(200);
+		$('.modal').removeClass('open').hide();
 		$('.overlay-modal').hide();
 		return false;
 	})
